@@ -7,7 +7,7 @@ const rateLimit = require('express-rate-limit');
 const routes = require('./routes');
 
 const app = express();
-const PORT = process.env.PORT || 3000; // <-- TO‘G‘RI
+const PORT = process.env.PORT || 8080; // <-- TO‘G‘RI
 
 // ─── Security middleware ─────────────────────────────────
 app.use(helmet());
