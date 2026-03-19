@@ -7,25 +7,25 @@ const rateLimit = require('express-rate-limit');
 const routes = require('./routes');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000; // <-- TO‘G‘RI
 
 // ─── Security middleware ─────────────────────────────────
 app.use(helmet());
 app.use(cors({
-  origin: '*', // In production: specify your frontend domain
+  origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
 // ─── Rate limiting ───────────────────────────────────────
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
+  windowMs: 15 * 60 * 1000,
   max: 100,
   message: { error: "Ko'p so'rov yuborildi. Keyinroq urinib ko'ring." },
 });
 
 const otpLimiter = rateLimit({
-  windowMs: 60 * 1000, // 1 minute
+  windowMs: 60 * 1000,
   max: 3,
   message: { error: "OTP limitiga yetdingiz. 1 daqiqadan keyin urinib ko'ring." },
 });
@@ -57,7 +57,7 @@ app.use((err, req, res, next) => {
 });
 
 // ─── Start ───────────────────────────────────────────────
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => { // <-- MUHIM: 0.0.0.0
   console.log(`\n🚀 PayFlow Backend running on port ${PORT}`);
   console.log(`📍 API: http://localhost:${PORT}/api`);
   console.log(`🔧 Mode: ${process.env.NODE_ENV || 'development'}\n`);
