@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "Oson Pay",
+    "slug": "oson-pay",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "osonpay",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/images/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0D0A14"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "uz.osonpay.app"
+    },
+    "android": {
+      "package": "uz.osonpay.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#0D0A14"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "9c059d6b-ccfb-4baf-be46-b8bcdef54dda"
+      }
+    }
+  }
+}
