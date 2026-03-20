@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Change this to your backend URL
-const BASE_URL = 'https://sparkling-analysis-production-008d.up.railway.app/api';
+const BASE_URL = 'https://oson-pay-backend-3.onrender.com/api';
 // For physical device, use your PC's local IP:
 // const BASE_URL = 'http://192.168.1.100:3000/api';
 
