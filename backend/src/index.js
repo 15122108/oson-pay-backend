@@ -56,6 +56,10 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Server xatoligi' });
 });
 
+// Run migrations on startup
+const runMigrations = require('./migrations/run');
+runMigrations().catch(console.error);
+
 // ─── Start ───────────────────────────────────────────────
 app.listen(PORT, '0.0.0.0', () => { // <-- MUHIM: 0.0.0.0
   console.log(`\n🚀 PayFlow Backend running on port ${PORT}`);
